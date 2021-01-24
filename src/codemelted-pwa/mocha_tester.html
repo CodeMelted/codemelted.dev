@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--
+@file Provides the ability to run the mocha tester to validate the library.
+@license MIT / (c) 2020 Mark Shaffer. All Rights Reserved.
+-->
+<html>
+    <head>
+        <title> Mocha Test Runner </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./node_modules/mocha/mocha.css">
+        <script src="./_dist/codemelted-pwa-min.js"> </script>
+        <script src="./node_modules/mocha/mocha.js"></script>
+        <script src="./node_modules/chai/chai.js"></script>
+        <script>mocha.setup('bdd');</script>
+    </head>
+    <body>
+        <h1> Mocha Test Runner </h1>
+        <div id="mocha"></div>
+        <script src="tst_codemelted-pwa.js"></script>
+        <script>
+            mocha.checkLeaks();
+            mocha.run();
+        </script>
+    </body>
+</html>
