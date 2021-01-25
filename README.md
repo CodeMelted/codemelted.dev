@@ -1,5 +1,11 @@
 <h1><img src="artifacts/icons8-computer-support-48.png" /> Cross Platform Services</h1>
 
+MODULE | DROID | iOS | LINUX | MAC | WIN | PI | EMB
+--- | --- | --- | --- | --- | --- | --- | ---
+pwa | X | X | X | X | X | X |
+pwsh | | | X | X | X | X | 
+
+
 <h1>TABLE OF CONTENTS</h1>
 
 - [INSTALLATION](#installation)

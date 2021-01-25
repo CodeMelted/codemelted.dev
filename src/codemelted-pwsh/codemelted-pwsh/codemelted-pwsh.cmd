@@ -1,6 +1,6 @@
 @echo off
 :: ============================================================================
-:: Launch point from a Windows CMD terminal to call into the CodeMeltedCLI
+:: Launch point from a Windows CMD terminal to call into the codemelted-pwsh
 :: PowerShell core module.
 :: LICENSE:
 ::    MIT / 2020 Mark Shaffer. All Rights Reserved.

@@ -1,7 +1,7 @@
 #!/usr/bin/pwsh
 # -----------------------------------------------------------------------------
-# ABOUT:   Has the build steps for the codemelted-pwa.js library.
-# LICENSE: MIT / (c) Mark Shaffer 2020. All Rights Reserved.
+# ABOUT:   Has the build steps for the codemelted-pwsh module.
+# LICENSE: MIT / (c) Mark Shaffer 2021. All Rights Reserved.
 # -----------------------------------------------------------------------------
 function build {
     function clean {

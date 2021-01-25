@@ -1,6 +1,6 @@
 @{
     # Script module or binary module file associated with this manifest.
-    RootModule = 'codemelted-cli.psm1'
+    RootModule = 'codemelted-pwsh.psm1'
     
     # Version number of this module.
     ModuleVersion = '0.0.1'
@@ -15,10 +15,10 @@
     Author = 'Mark Shaffer'
     
     # Company or vendor of this module
-    CompanyName = 'https://codemelted.com/xplat-svcs'
+    # CompanyName = ''
     
     # Copyright statement for this module
-    Copyright = 'MIT (c) 2021 Mark Shaffer. All rights reserved.'
+    Copyright = '(c) 2021 Mark Shaffer. All rights reserved.'
     
     # Description of the functionality provided by this module
     Description = ''
@@ -72,7 +72,7 @@
     
     # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
     AliasesToExport = @(
-        "codemelted"
+        "codemelted-pwsh"
     )
     
     # DSC resources to export from this module
