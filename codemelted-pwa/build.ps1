@@ -9,6 +9,7 @@ function build {
     # Constants:
     [string]$PROJ_NAME = "codemelted-pwa"
     [string]$SCRIPT_PATH = $PSScriptRoot
+    [string]$SRC_PATH = $SCRIPT_PATH + "/src"
     [string]$DIST_PATH = $SCRIPT_PATH + "/_dist"
     [string]$DOC_PATH = $DIST_PATH + "/docs"
 
@@ -41,7 +42,6 @@ function build {
         foreach ($file in $htmlFiles) {
             [string]$newFile = $file.Directory.FullName + [IO.Path]::DirectorySeparatorChar + 
                 "new" + $file.Name
-            Write-Host $newFile
             foreach ($line in Get-Content $file) {
                 if ($line.Contains("</body>")) {
                     "<script type='module' src='./scripts/doc-theme.js'></script>" | Out-File -FilePath $newFile -Append
@@ -50,8 +50,10 @@ function build {
             }
             Remove-Item -Path $file -Force
             Rename-Item -Path $newFile -NewName $file -Force
+            Write-Host $file created.
         }
         Copy-Item -Path $SCRIPT_PATH/doc-theme.js -Destination $DOC_PATH/scripts -Force
+        Write-Host ""
         Write-Host "MESSAGE: $PROJ_NAME docs generated"
     }
 
@@ -77,6 +79,9 @@ function build {
     function make {
         Write-Host "MESSAGE: Now building $PROJ_NAME"
         run_cmd {npm run make}
+        Copy-Item -Path $SRC_PATH/codemelted-pwa.js -Destination $DIST_PATH -Force
+        Copy-Item -Path $SRC_PATH/icons8-javascript-48.png -Destination $DIST_PATH -Force
+        Copy-Item -Path $SRC_PATH/README.md -Destination $DIST_PATH -Force
         Write-Host "MESSAGE: $PROJ_NAME built"
     }
 
@@ -110,7 +115,7 @@ function build {
         "--prep"  { prep; break  }
         "--test"  { test; break  }
         default  { 
-            throw "Valid arguments: --clean / -docs / --help / --make / --prep / --test"
+            throw "Valid arguments: --clean / --docs / --help / --make / --prep / --test"
             break 
         }
     }    

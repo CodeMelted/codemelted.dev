@@ -5,7 +5,7 @@
   "main": "codemelted-pwa.js",
   "scripts": {
     "docs": "jsdoc src/codemelted-pwa.js --destination ./_dist/docs || exit 1",
-    "make": "node_modules/.bin/eslint --format html --output-file ./_dist/eslint_results.html ./codemelted-pwa.js && java -jar node_modules/google-closure-compiler-java/compiler.jar --compilation_level SIMPLE --language_out ECMASCRIPT6_STRICT --js_output_file ./_dist/codemelted-pwa-min.js ./codemelted-pwa.js || exit 1",
+    "make": "node_modules/.bin/eslint --format html --output-file ./_dist/eslint_results.html ./src/codemelted-pwa.js && java -jar node_modules/google-closure-compiler-java/compiler.jar --compilation_level SIMPLE --language_out ECMASCRIPT6_STRICT --js_output_file ./_dist/codemelted-pwa-min.js ./src/codemelted-pwa.js || exit 1",
     "test": "mocha-headless-chrome -f http://localhost:8080/test/mocha_tester.html -o ./_dist/test-results.json || exit 1"
   },
   "repository": {

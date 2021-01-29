@@ -308,7 +308,9 @@ function Invoke-GIS {
         [double]$v = $args[2]
         [string]$conversion = $args[3]
         $script:_instance.gis.convert($v, $conversion)
-    } else {
+    } elseif ($action -eq "help") {
+        Get-Help Invoke-GIS
+    }else {
         throw "'codemelted --gis' received an unsupported '$action' action"        
     }
 
@@ -388,7 +390,7 @@ function Invoke-Network {
 }
 
 function Invoke-Platform {
-    [string]$action = $params[2]
+    [string]$action = $args[1]
     if ($action -eq "exists") {
         [string]$cmd = $args[3]
         $script:_instance.platform.exists($cmd)
@@ -405,6 +407,8 @@ function Invoke-Platform {
     } elseif ($action -eq "shell") {
         [scriptblock]$cmd = $args[3]
         $script:_instance.platform.shell($cmd)
+    } elseif ($action -eq "help") {
+        Get-Help Invoke-Platform
     } else {
         throw "'codemelted --platform' received an unsupported '$action' action" 
     }
