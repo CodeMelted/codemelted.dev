@@ -10,6 +10,7 @@ function build {
     [string]$PROJ_NAME = "codemelted-pwa"
     [string]$SCRIPT_PATH = $PSScriptRoot
     [string]$DIST_PATH = $SCRIPT_PATH + "/_dist"
+    [string]$DOC_PATH = $DIST_PATH + "/docs"
 
     # -------------------------------------------------------------------------
     # Helper Functions
@@ -36,6 +37,21 @@ function build {
     function docs {
         Write-Host "MESSAGE: Now generating $PROJ_NAME docs"
         run_cmd {npm run docs}
+        $htmlFiles = Get-ChildItem -Path $DOC_PATH -Filter *.html
+        foreach ($file in $htmlFiles) {
+            [string]$newFile = $file.Directory.FullName + [IO.Path]::DirectorySeparatorChar + 
+                "new" + $file.Name
+            Write-Host $newFile
+            foreach ($line in Get-Content $file) {
+                if ($line.Contains("</body>")) {
+                    "<script type='module' src='./scripts/doc-theme.js'></script>" | Out-File -FilePath $newFile -Append
+                }
+                $line | Out-File -FilePath $newFile -Append
+            }
+            Remove-Item -Path $file -Force
+            Rename-Item -Path $newFile -NewName $file -Force
+        }
+        Copy-Item -Path $SCRIPT_PATH/doc-theme.js -Destination $DOC_PATH/scripts -Force
         Write-Host "MESSAGE: $PROJ_NAME docs generated"
     }
 
