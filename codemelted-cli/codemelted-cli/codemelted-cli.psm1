@@ -5,7 +5,7 @@ using namespace System.Runtime.InteropServices
 #    MIT / (c) 2021 Mark Shaffer. All Rights Reserved
 # =============================================================================
 [string]$ABOUT = @'
-TITLE:     codemelted-pwsh
+TITLE:     codemelted-cli
 VERSION:   v0.0.1 (Last Updated on 24 Jan 2021)
 WEBSITE:   https://codemelted.com/xplat-svcs
 LICENSE:   MIT / (c) 2021 Mark Shaffer. All Rights Reserved.
@@ -287,7 +287,7 @@ class Platform {
     }
 }
 
-# @class The CodeMelted class is the holder API for the codemelted-pwsh module.
+# @class The CodeMelted class is the holder API for the codemelted module.
 class CodeMelted {
     # @property [GIS] Accesses the implemented domain use case.
     [GIS]$gis = [GIS]::new()
@@ -317,7 +317,7 @@ function Invoke-GIS {
     <#
     .SYNOPSIS
         Supports the 'Do Geographic Information System Processing' domain use 
-        case for the codemelted-pwsh cross platform services module.
+        case for the codemelted cross platform services module.
 
     .DESCRIPTION
         codemelted --gis convert [conversion] [double]
@@ -362,25 +362,25 @@ function Invoke-Network {
     <#
     .SYNOPSIS
         Supports the 'Do Network Processing' domain use case for the 
-        codemelted-pwsh cross platform services module.       
+        codemelted cross platform services module.       
 
     .DESCRIPTION
-        codemelted-pwsh --network available [address]
+        codemelted --network available [address]
             Returns [bool] of whether the particular specified address is 
             accessible.
         
-        codemelted-pwsh --network info
+        codemelted --network info
             Reports the hostname and Network IP Addresses to STDOUT.
 
-        codemelted-pwsh --network monitor [address] [port] [count]
+        codemelted --network monitor [address] [port] [count]
             Runs a network monitor to STDOUT tracking the specified 
             addresss:port for the specified count.
 
-        codemelted-pwsh --network ping [address]
+        codemelted --network ping [address]
             Runs a ICMP ping to the specified address returning the result
             as an [array].
 
-        codemelted-pwsh --network trace [address]
+        codemelted --network trace [address]
             Runs a network trace to the specified address returning the result
             as an [array].
 
@@ -416,29 +416,29 @@ function Invoke-Platform {
     <#
     .SYNOPSIS
         Supports the 'Do Platform Processing' domain use case for the 
-        codemelted-pwsh cross platform services module.            
+        codemelted cross platform services module.            
 
     .DESCRIPTION
-        codemelted-pwsh --platform exists [cmd]
+        codemelted --platform exists [cmd]
             Returns a [bool] as to whether the command was detected within the
             environment.
 
-        codemelted-pwsh --platform find [search string]
+        codemelted --platform find [search string]
             Returns a [string] of where the search string was found by 
             performing a recursive search of the directory for the term.
 
-        codemelted-pwsh --platform info
+        codemelted --platform info
             Returns a [psobject] containing the osName, osVersion, and
             architecture of the platform.
 
-        codemelted-pwsh --platform monitor [process] [count] [csvFile]
+        codemelted --platform monitor [process] [count] [csvFile]
             Runs a CPU monitor and memory usage to STDOUT based on the
             specified information.  If process is not specified it will 
             measure system vs. a specific process.  Specify the count to have
             it run longer than the default.  Specify the csvFile if you want
             to capture the results.
 
-        codemelted-pwsh --platform shell [scriptblock]
+        codemelted --platform shell [scriptblock]
             Runs a series of specified commands wrapped by the script block.
             You can change directories and string together a series of actions
             and as long as nothing fails it will return you to your original
@@ -477,28 +477,28 @@ function Invoke-CodeMelted {
         cmdlet processing an action request and any associated options.
 
         Alias:
-            codemelted-pwsh
+            codemelted
 
         Get Object Reference:
-            $api = codemelted-pwsh --object
+            $api = codemelted --object
                 $api.[domain].method()
                 See API documentation for the object structure and usage within
                 a PowerShell script.
 
         Print Help:
-            codemelted-pwsh --about
-            codemelted-pwsh --help
-            codemelted-pwsh [domain] help
+            codemelted --about
+            codemelted --help
+            codemelted [domain] help
 
         Domain Commands:
-            codemelted-pwsh --gis [action] [options]
-            codemelted-pwsh --network [action] [options]
-            codemelted-pwsh --platform [action] [options]
-            codemelted-pwsh --help
+            codemelted --gis [action] [options]
+            codemelted --network [action] [options]
+            codemelted --platform [action] [options]
+            codemelted --help
 
     .LINK 
         https://codemelted.com/xplat-svcs
     #> 
 }
-Set-Alias -Name codemelted-pwsh -Value Invoke-CodeMelted
-Export-ModuleMember -Function Invoke-CodeMelted -Alias codemelted-pwsh
+Set-Alias -Name codemelted -Value Invoke-CodeMelted
+Export-ModuleMember -Function Invoke-CodeMelted -Alias codemelted

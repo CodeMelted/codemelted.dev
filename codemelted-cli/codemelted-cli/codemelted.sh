@@ -6,7 +6,7 @@
 #    MIT / (c) 2021 Mark Shaffer. All Rights Reserved.
 # =============================================================================
 if which pwsh > /dev/null; then
-    pwsh -Command codemelted-pwsh "$@"
+    pwsh -Command Invoke-CodeMelted "$@"
 else
     echo "ERROR: PowerShell Core not detected on the system."
     echo "       Goto https://github.com/PowerShell/PowerShell to install."

@@ -2,26 +2,32 @@
 
 MODULE | DROID | iOS | LINUX | MAC | WIN | PI | EMB
 --- | --- | --- | --- | --- | --- | --- | ---
+cli | | | X | X | X | X | 
+flutter | X | X | X | X | X | ? |
+java | ? | ? | X | X | X | X | ?
+python | ? | ? | X | X | X | X | ?
 pwa | X | X | X | X | X | X |
-pwsh | | | X | X | X | X | 
-
+- ```?:``` Means research suggests we should be able to target that platform but we will see as project progresses.
 
 <h1>TABLE OF CONTENTS</h1>
 
 - [INSTALLATION](#installation)
-  - [Progressive Web App](#progressive-web-app)
+  - [PWA Module](#pwa-module)
     - [Prerequisites](#prerequisites)
     - [Steps](#steps)
-    - [GitHub Releases](#github-releases)
 - [USAGE](#usage)
-  - [Progressive Web App](#progressive-web-app-1)
+  - [PWA Module](#pwa-module-1)
+    - [Access](#access)
+    - [Releases](#releases)
 - [DESIGN NOTES](#design-notes)
+  - [Use Cases](#use-cases)
+  - [API Call Signature](#api-call-signature)
 - [ATTRIBUTIONS](#attributions)
 - [LICENSE](#license)
 
 # INSTALLATION
 
-## Progressive Web App
+## PWA Module
 
 ### Prerequisites
 
@@ -54,31 +60,42 @@ The following steps are the manual way from a terminal to clone and maintain thi
     $ ./build --test
     ```
 
-### GitHub Releases
+
+
+# USAGE
+
+## PWA Module
+
+### Access
+
+```HTML Page:```
+```html
+<script src="https://codemelted.com/pwa-js/releases/[version]/codemelted-pwa.js"></script>
+```
+
+```ES6 Module:```
+```javascript
+import "https://codemelted.com/pwa-js/releases/[version]/codemelted-pwa.js";
+```
+
+### Releases
 
 Release | API | Description
 --- | --- | ---
 v0.5.3 | <a target="_blank" href="./releases/v0.5.3/docs/">View</a> <br /> <a target="_blank" href="https://github.com/CodeMelted/pwa-js-lib/releases/tag/codemelted-pwa-v0.5.3">Download</a> | Library has ES6 compiled format to support import statements.
 
 
-```CDN Reference:```
-
-```html
-<script src="https://codemelted.com/pwa-js/releases/[version]/codemelted-pwa.js"></script>
-```
-
-```javascript
-import "https://codemelted.com/pwa-js/releases/[version]/codemelted-pwa.js";
-```
-
-# USAGE
-
-## Progressive Web App
-
-
-
-
 # DESIGN NOTES
+
+```Module Goals:```
+1. Something
+2. Something
+
+## Use Cases
+
+## API Call Signature
+
+
 
 # ATTRIBUTIONS
 

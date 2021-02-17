@@ -1,6 +1,6 @@
 @{
     # Script module or binary module file associated with this manifest.
-    RootModule = 'codemelted-pwsh.psm1'
+    RootModule = 'codemelted-cli.psm1'
     
     # Version number of this module.
     ModuleVersion = '0.0.1'
@@ -72,7 +72,7 @@
     
     # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
     AliasesToExport = @(
-        "codemelted-pwsh"
+        "codemelted"
     )
     
     # DSC resources to export from this module

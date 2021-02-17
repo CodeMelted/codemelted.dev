@@ -1,4 +1,4 @@
-<h1><img src="icons8-powershell-48.png" />codemelted-pwa Module</h1>
+<h1><img src="icons8-powershell-48.png" />codemelted-pwsh Module</h1>
 
 <h1>TABLE OF CONTENTS</h1>
 
