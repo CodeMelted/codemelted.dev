@@ -2,7 +2,15 @@
 
 <h1>TABLE OF CONTENTS</h1>
 
+- [INSTALLATION](#installation)
+  - [PWA Module](#pwa-module)
+    - [Prerequisites](#prerequisites)
+    - [Steps](#steps)
 - [USAGE](#usage)
+  - [PWA Module](#pwa-module-1)
+    - [Access](#access)
+    - [Releases](#releases)
+- [USAGE](#usage-1)
   - [async](#async)
   - [gis](#gis)
   - [logger](#logger)
@@ -16,6 +24,65 @@
   - [storage](#storage)
     - [Storage Methods](#storage-methods)
     - [Using Storage](#using-storage)
+
+# INSTALLATION
+
+## PWA Module
+
+### Prerequisites
+
+- [pwsh Core](https://github.com/PowerShell/PowerShell) - Scripting technology to execute node commands for the project.
+- [NodeJS](https://nodejs.org/en/) - To initialize the project to gather supported items for building and testing
+- [git](https://git-scm.com/) - Obviously for cloning and stuff.
+
+### Steps
+
+The following steps are the manual way from a terminal to clone and maintain this project.  These steps can also be incorporated into a automated build system (i.e. Jenkins) if necessary.
+
+1. Open a terminal to the project location.  Prep the project.  This will setup the ability to run the node commands by downloading dev dependencies from NPM.
+
+    ```
+    $ cd [project location]/src/codemelted-pwa
+    $ ./build --prep
+    ```
+
+2. Build the library from the terminal window. This will create a ```_dist``` folder with the compiled ```codemelted-pwa.js``` minified JS library, ```docs``` folder containing the jsdoc of the library, and ```eslint_results.html``` with a scan results of the eslint of the code files.
+
+    ```
+    $ ./build --clean
+    $ ./build --docs
+    $ ./build --make
+    ```
+
+3. Run mocha tests of the library from the terminal window. The ```test-results.json``` file can be found within the ```_dist``` folder.
+
+    ```
+    $ ./build --test
+    ```
+
+
+
+# USAGE
+
+## PWA Module
+
+### Access
+
+```HTML Page:```
+```html
+<script src="https://codemelted.com/pwa-js/releases/[version]/codemelted-pwa.js"></script>
+```
+
+```ES6 Module:```
+```javascript
+import "https://codemelted.com/pwa-js/releases/[version]/codemelted-pwa.js";
+```
+
+### Releases
+
+Release | API | Description
+--- | --- | ---
+v0.5.3 | <a target="_blank" href="./releases/v0.5.3/docs/">View</a> <br /> <a target="_blank" href="https://github.com/CodeMelted/pwa-js-lib/releases/tag/codemelted-pwa-v0.5.3">Download</a> | Library has ES6 compiled format to support import statements.
 
 # USAGE
 
