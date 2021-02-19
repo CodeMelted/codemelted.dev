@@ -1,4 +1,4 @@
-<hr style="margin: 1;" />
+<hr style="margin: 0;" />
 <div style="text-align: center;"><img style="max-width: 100%;" src="website-nav/images/logo-header.png" alt="header logo" /></div>
 <hr style="margin: 0;" /> <br />
 
