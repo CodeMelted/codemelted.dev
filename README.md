@@ -9,10 +9,7 @@
 
 <h1>TABLE OF CONTENTS</h1>
 
-- [PROJECT SETUP](#project-setup)
-  - [Prerequisites](#prerequisites)
-  - [Environments](#environments)
-  - [FUNCTIONAL DECOMPOSITION](#functional-decomposition)
+- [FUNCTIONAL DECOMPOSITION](#functional-decomposition)
   - [Requirements](#requirements)
   - [Use Cases](#use-cases)
   - [User Interface Mockup](#user-interface-mockup)
@@ -21,21 +18,7 @@
 - [ATTRIBUTIONS](#attributions)
 - [LICENSE](#license)
 
-# PROJECT SETUP
-
-The following steps setup the development environment for each of the module projects.  This will allow you to maintain it within your own environment.  If you find anything wrong with one of these modules please open a [GitHub Issue](https://github.com/CodeMelted/xplat-svcs/issues) .
-
-- *NOTE: This project is under active development so when you run through these steps it is not fully up and running yet.*
-
-## Prerequisites
-
-- [ ] [PowerShell Core](https://github.com/PowerShell/PowerShell)
-
-## Environments
-
-TBD
-
-## FUNCTIONAL DECOMPOSITION
+# FUNCTIONAL DECOMPOSITION
 
 ## Requirements
 

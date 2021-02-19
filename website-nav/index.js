@@ -28,7 +28,6 @@ setTimeout(() => {
             <div id="divTabs" class="tab-container">
                 <a class="tab-link"><img width="40px" height="40px" src="https://codemelted.dev/website-nav/images/icons8-javascript-48.png" alt="Progressive Web App" /></a>
             </div>  
-            <div id="btnComment" class="w3-icon"><i class="fa fa-comments"></i></div>
             <div id="btnSearch" class="w3-icon"><i class="fa fa-search"></i></div>
         </div>
     
