@@ -32,19 +32,7 @@ setTimeout(() => {
             <div id="btnSearch" class="w3-icon"><i class="fa fa-search"></i></div>
         </div>
     
-        <div id="divComment" class="w3-modal">
-            <div class="w3-modal-content w3-animate-zoom">
-                <div class="w3-container">
-                    <span onclick="document.getElementById('divComment').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                    <h2 style="margin: 0;">Contact / Follow Me</h2>
-                    <hr style="margin: 0;" />
-                    <p><a href="https://dev.to/codemelted" rel="noopener" target="_blank"><img width="25px" height="25px" src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Mark Shaffer's DEV Profile"></a> - Technology Blog Topics</p>
-                    <p><a href="https://github.com/CodeMelted/" rel="noopener" target="_blank"><img width="25px" height="25px" src="https://codemelted.dev/website-nav/images/github-icon.png" alt="Mark Shaffer's Github Profile"/></a> - Latest Code Developments </p>
-                    <p><a href="https://www.instagram.com/codemelted/" rel="noopener" target="_blank"><img width="25px" height="25px" src="https://codemelted.dev/website-nav/images/instagram-icon.png" alt="Mark Shaffer's Instagram Profile"/></a> - Photography / Videos</p>
-                    <p><a href="mailto:mark.shaffer@codemelted.com" rel="noopener" target="_blank"><i class="fa fa-envelope w3-xlarge"></i></a> - Email Me</p>
-                </div>
-            </div>
-        </div>
+        <!-- Search Popup -->
         <div id="divSearch" class="w3-modal">
             <div class="w3-modal-content w3-animate-zoom">
                 <div class="w3-container">

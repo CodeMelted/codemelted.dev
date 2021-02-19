@@ -71,7 +71,7 @@ header {
     border: 1px solid black;
     position: fixed;
     display: grid;
-    grid-template-columns: var(--first-column-width) auto 35px 35px;
+    grid-template-columns: var(--first-column-width) auto 35px;
     top: 0;
     left: 0;
     width: 100%;

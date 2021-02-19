@@ -12,13 +12,12 @@
 - [PROJECT SETUP](#project-setup)
   - [Prerequisites](#prerequisites)
   - [Environments](#environments)
-- [ENGINEERING ANALYSIS](#engineering-analysis)
-  - [Functional Decomposition](#functional-decomposition)
-    - [Requirements](#requirements)
-    - [Use Cases](#use-cases)
-    - [User Interface Mockup](#user-interface-mockup)
-  - [Design Notes](#design-notes)
-  - [Test Procedures](#test-procedures)
+  - [FUNCTIONAL DECOMPOSITION](#functional-decomposition)
+  - [Requirements](#requirements)
+  - [Use Cases](#use-cases)
+  - [User Interface Mockup](#user-interface-mockup)
+- [DESIGN NOTES](#design-notes)
+- [TEST NOTES](#test-notes)
 - [ATTRIBUTIONS](#attributions)
 - [LICENSE](#license)
 
@@ -36,30 +35,17 @@ The following steps setup the development environment for each of the module pro
 
 TBD
 
-# ENGINEERING ANALYSIS
+## FUNCTIONAL DECOMPOSITION
 
-MODULE | DROID | iOS | LINUX | MAC | WIN | PI | EMB
---- | --- | --- | --- | --- | --- | --- | --- 
-cpp | | | X | X | X | X | X
-cli | | | X | X | X | X | 
-flutter | X | X | X | X | X | ? |
-java | ? | ? | X | X | X | X | ?
-python | ? | ? | X | X | X | X | ?
-pwa | X | X | X | X | X | X |
+## Requirements
 
-- ```?:``` Means research suggests we should be able to target that platform but we will see as project progresses.
+## Use Cases
 
-## Functional Decomposition
+## User Interface Mockup
 
-### Requirements
+# DESIGN NOTES
 
-### Use Cases
-
-### User Interface Mockup
-
-## Design Notes
-
-## Test Procedures
+# TEST NOTES
 
 
 # ATTRIBUTIONS
