@@ -1,0 +1,157 @@
+/*
+@file This file themes the main SPA navigation and overall look.  Any 
+    additional items for areas of the SPA will be included with this file.
+@copyright (c) 2020 Mark Shaffer. All Rights Reserved.
+*/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://www.w3schools.com/w3css/4/w3.css");
+@import url("hacker-theme.css");
+
+/* Setup the navigational elements of the SPA */
+:root {
+    --nav-bg-color: black;
+    --nav-fg-color: white;
+    --nav-hover-color: gray;
+    --nav-height: 48px;
+    --footer-height: 18px;
+    --font-family: sans-serif;
+
+    --margin-top: 65px;
+    --margin-sides: 75px;
+    --margin-bottom: 25px;
+
+    --tab-bg-color: #333;
+    --tab-fg-color: white;
+    --tab-hover-color: gray;
+
+    --first-column-width: 245px;
+}
+
+body {
+    margin-top: var(--margin-top);
+    margin-left: var(--margin-sides);
+    margin-right: var(--margin-sides);
+    margin-bottom: var(--margin-bottom);
+}
+
+header {
+    display: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: darkslategray;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.fixed-header {
+    border: 1px solid black;
+    position: fixed;
+    display: grid;
+    grid-template-columns: var(--first-column-width) auto 35px 35px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height);
+    background-color: var(--nav-bg-color);
+    box-shadow: 0 10px 20px -2px var(--nav-bg-color);
+    color: var(--nav-fg-color);
+    font-family: var(--font-family);
+}
+
+.tab-container {
+    background-color: var(--tab-bg-color);
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    font-family: var(--font-family);
+    font-size: 12px;
+    height: var(--nav-height);
+}
+
+.tab-container a {
+    color: var(--tab-fg-color);
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px;
+}
+
+.tab-container a:hover { 
+    background-color: var(--tab-hover-color); 
+}
+
+.active-tab {
+    background-color: green;
+}
+
+.w3-icon {
+    display: block;
+    height: 100%;
+    border: 1px solid darkslategray;
+    text-align: center;
+    cursor: pointer;
+}
+
+.w3-icon i {
+    margin-top: 15px;
+}
+
+.fixed-footer {
+    position: fixed;
+    display: table-cell;
+    vertical-align: middle;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--footer-height);
+    background-color: black;
+    text-align: center;
+    font-size: 12px;
+    font-family: var(--font-family);
+}
+
+.w3-container {
+    background-color: darkslategray;
+}
+
+/* Setup media query to print active page without header / footer and nave */
+@media print {
+    #divHeader, #divTabs, #divFooter {
+        display: none;
+    }
+}
+
+/* Resize logo based on different screen resolutions of popular phones */
+@media only screen and (max-width: 650px) {
+    :root {
+        --margin-sides: 20px;
+        --first-column-width: 110px;
+    }
+
+    .header-image {
+        content:url("https://codemelted.dev/website-nav/images/logo-mobile.png");
+    }
+}

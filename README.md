@@ -1,4 +1,9 @@
-<h1><img src="artifacts/icons8-computer-support-48.png" /> Cross Platform Services</h1>
+<hr style="margin: 1;" />
+<div style="text-align: center;"><img style="max-width: 100%;" src="website-nav/images/logo-header.png" alt="header logo" /></div>
+<hr style="margin: 0;" /> <br />
+
+  Say something
+
 
 
 
@@ -34,13 +39,14 @@ TBD
 # ENGINEERING ANALYSIS
 
 MODULE | DROID | iOS | LINUX | MAC | WIN | PI | EMB
---- | --- | --- | --- | --- | --- | --- | ---
+--- | --- | --- | --- | --- | --- | --- | --- 
 cpp | | | X | X | X | X | X
 cli | | | X | X | X | X | 
 flutter | X | X | X | X | X | ? |
 java | ? | ? | X | X | X | X | ?
 python | ? | ? | X | X | X | X | ?
 pwa | X | X | X | X | X | X |
+
 - ```?:``` Means research suggests we should be able to target that platform but we will see as project progresses.
 
 ## Functional Decomposition
@@ -84,3 +90,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+<script type='module' src='./website-nav/index.js'></script>
