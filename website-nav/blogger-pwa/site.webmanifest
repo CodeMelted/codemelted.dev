@@ -3,7 +3,7 @@
     "short_name": "codemelted.com",
     "description": "Something",
     "display": "standalone",
-    "start_url": ".",
+    "start_url": "https://www.codemelted.com/",
     "background_color": "#ffffff",
     "theme_color": "#ffffff",
     "icons": [
