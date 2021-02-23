@@ -2,7 +2,7 @@
     "name": "Melt the Code",
     "short_name": "CodeMelted",
     "description": "A father exploring software engineering, STEM fields, nature, photography, and nerd culture trying to understand the world.",
-    "display": "minimum-ui",
+    "display": "standalone",
     "start_url": "https://www.codemelted.com/",
     "background_color": "#ffffff",
     "theme_color": "#ffffff",
