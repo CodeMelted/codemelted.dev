@@ -2,7 +2,7 @@
     "name": "Melt the Code (Blog)",
     "short_name": "codemelted.com",
     "description": "Something",
-    "display": "standalone",
+    "display": "minimum-ui",
     "start_url": "https://www.codemelted.com/",
     "background_color": "#ffffff",
     "theme_color": "#ffffff",
