@@ -1,11 +1,23 @@
 <hr style="margin: 0;" />
-<div style="text-align: center;"><img style="max-width: 100%;" src="website-nav/images/logo-header.png" alt="header logo" /></div>
-<hr style="margin: 0;" /> <br />
+<div style="text-align: center;"><img style="width: 100%;" src="website-nav/images/logo-header.png" alt="header logo" />
+  <div style='background-color: darkslategray'>
+      <div style='padding-top: 0; text-align: center; background-color: darkslategray; display: grid; grid-template-columns: auto auto;'>
+        <a href="https://blog.codemelted.dev" rel="noopener"><img width="48px" height="48px" src="https://codemelted.dev/website-nav/images/icons8-blog-48.png" alt="blog.codemelted.dev" /></a>
+        <a href="https://media.codemelted.dev" rel="noopener"><img width="48px" height="48px" src="https://codemelted.dev/website-nav/images/icons8-media-48.png" alt="media.codemelted.dev" /></a>
+      </div>
+      <hr style='padding: 0; margin: 0;' />
+      <div style='padding-top: 5px; padding-bottom: 5px; text-align: center; display: grid; grid-template-columns: auto auto auto auto auto;'>
+        <a href="https://dev.to/codemelted" rel="noopener"><img width="25px" height="25px" src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Mark Shaffer&#39;s DEV Profile" /></a>
+        <a href="https://github.com/CodeMelted/" rel="noopener"><img width="25px" height="25px" src="https://codemelted.dev/website-nav/images/github-icon.png" alt="Mark Shaffer's Github Profile"/></a>
+        <a href="https://www.instagram.com/codemelted/" rel="noopener"><img width="25px" height="25px" src="https://codemelted.dev/website-nav/images/instagram-icon.png" alt="Mark Shaffer's Instagram Profile"/></a>
+        <a href="https://twitter.com/codemelted/" rel="noopener"><img width="25px" height="25px" src="https://codemelted.dev/website-nav/images/twitterIcon.png" alt="Mark Shaffer's Twitter Profile"/></a>
+        <a href="https://www.youtube.com/channel/UChrf2GS6hyluDU3S5wGorcA" rel="noopener"><img width="30px" height="25px" src="https://codemelted.dev/website-nav/images/youtubeIcon.png" alt="Mark Shaffer's YouTube Channel"/></a>
+      </div>
+  </div>
+ </div>
+ <hr style="margin: 0;" /> <br />
 
-  Say something
-
-
-
+Say something interesting...
 
 <h1>TABLE OF CONTENTS</h1>
 
@@ -34,7 +46,8 @@
 # ATTRIBUTIONS
 
 - <a target="_blank" href="https://github.com/jgraph/drawio-desktop/releases">draw.io</a>: Utilized to create and maintain the design notes for each project.
-- <a target="_blank" href="https://icons8.com/icons/set/computer-support">Computer Support icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+- <a target="_blank" href="https://icons8.com/icons/set/blog">Blog icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+- <a target="_blank" href="https://icons8.com/icons/set/media">Media icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 
 # LICENSE
 
