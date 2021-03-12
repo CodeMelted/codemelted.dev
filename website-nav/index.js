@@ -24,7 +24,7 @@ setTimeout(() => {
         `
         <!-- Fixed Header -->
         <div id="divHeader" class="fixed-header">
-            <div><a href="https://codemelted.dev" rel="noopener"><img src="https://codemelted.dev/website-nav/images/logo-593x100.png" alt="logo" /></a></div>
+            <div><a href="https://codemelted.dev" rel="noopener"><img src="https://codemelted.dev/website-nav/images/logo-242x48.png" alt="logo" /></a></div>
             <div id="divTabs" class="tab-container">
                 <a class="tab-link"><img width="40px" height="40px" src="https://codemelted.dev/website-nav/images/icons8-javascript-48.png" alt="Progressive Web App" /></a>
             </div>  
