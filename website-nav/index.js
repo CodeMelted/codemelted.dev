@@ -4,13 +4,13 @@
  *  module projects.
  * @copyright (c) 2020 Mark Shaffer. All Rights Reserved
  */
-// import "https://codemelted.com/pwa-js/releases/v0.5.3/codemelted-pwa.js";
+import "https://codemelted.dev/codemelted-js/src/codemelted-pwa.js";
 
 // ----------------------------------------------------------------------------
 // Common Data
 const BASE_URL = "https://codemelted.dev";
 const TAB_NAVIGATION = [
-    { name: "Progressive Web App" , url: `${BASE_URL}/codemelted-pwa/` , readme: "" },
+    { name: "Java Script" , url: `${BASE_URL}/codemelted-js/` , readme: "" },
 ];
 
 // ----------------------------------------------------------------------------
@@ -127,14 +127,8 @@ setTimeout(() => {
 });
 
 // ----------------------------------------------------------------------------
-// Handle Icon Logic
+// Handle Search Logic
 setTimeout(() => {
-    let btnComment = document.getElementById("btnComment");
-    let divComment = document.getElementById("divComment");
-    btnComment.addEventListener("click", () => {
-        divComment.style.display = "block";
-    });
-    
     let btnSearch = document.getElementById("btnSearch");
     let divSearch = document.getElementById("divSearch");
     let btnGo = document.getElementById("btnGo");
