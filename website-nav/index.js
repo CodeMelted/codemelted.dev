@@ -26,7 +26,7 @@ setTimeout(() => {
         <div id="divHeader" class="fixed-header">
             <div><a href="https://codemelted.dev" rel="noopener"><img src="https://codemelted.dev/website-nav/images/logo-242x48.png" alt="logo" /></a></div>
             <div id="divTabs" class="tab-container">
-                <a class="tab-link"><img width="40px" height="40px" src="https://codemelted.dev/website-nav/images/icons8-javascript-48.png" alt="Progressive Web App" /></a>
+                <a class="tab-link"><img width="40px" height="40px" src="https://codemelted.dev/website-nav/images/icons8-javascript-48.png" alt="Java Script" /></a>
             </div>  
             <div id="btnSearch" class="w3-icon"><i class="fa fa-search"></i></div>
         </div>
@@ -140,6 +140,7 @@ setTimeout(() => {
                     }
                 }
             } catch (err) {
+                console.log(err);
                 alert(err);
             }
         };
