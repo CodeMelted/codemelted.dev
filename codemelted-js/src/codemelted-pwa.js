@@ -407,7 +407,7 @@ class Async {
      *  run.
      */
     addShutdownHook(task) {
-        Logger.instance.checkParam("function", task, 0);
+        INSTANCES['logger'].checkParam("function", task, 0);
         window.addEventListener("beforeunload", task);
     }
 
@@ -423,18 +423,18 @@ class Async {
      * @return {Promise} A promise for the task to execute
      */
     run(task, type, data = undefined) {
-        Logger.instance.checkParam("function", task, 0);
+        INSTANCES['logger'].checkParam("function", task, 0);
         let rtnPromise = undefined;
         switch (type) {
             case Tasking.BACKGROUND:
                 rtnPromise = this._runBackground(task, data);
                 break;
             case Tasking.MAIN:
-                Logger.instance.checkParam("number", data);                
+                INSTANCES['logger'].checkParam("number", data);                
                 rtnPromise = this._runMain(task, data < 0 ? 0 : data);
                 break;
             default:
-                Logger.instance.throwSyntaxError("Invalid Tasking received.");
+                INSTANCES['logger'].throwSyntaxError("Invalid Tasking received.");
                 break;
         }
 
@@ -604,12 +604,12 @@ class GIS {
      *  PositionData object.
      */
     _validatePositionData(data, checkTime = false) {
-        Logger.instance.checkParam("number", data.latitude);
-        Logger.instance.checkParam("number", data.longitude);
-        Logger.instance.checkParam("number", data.latitude);
-        Logger.instance.checkParam("number", data.longitude);
+        INSTANCES['logger'].checkParam("number", data.latitude);
+        INSTANCES['logger'].checkParam("number", data.longitude);
+        INSTANCES['logger'].checkParam("number", data.latitude);
+        INSTANCES['logger'].checkParam("number", data.longitude);
         if (checkTime) {
-            Logger.instance.checkParam("number", data.timestamp);
+            INSTANCES['logger'].checkParam("number", data.timestamp);
         }
     }
 
@@ -713,10 +713,10 @@ class GIS {
      * @returns {number} The converted unit
      */    
     convert(v, type) {
-        Logger.instance.checkParam("number", v);
+        INSTANCES['logger'].checkParam("number", v);
         let converter = this._conversionMap[type];
         if (converter === undefined) {
-            Logger.instance.throwSyntaxError(
+            INSTANCES['logger'].throwSyntaxError(
                 "[type] specified was not a Conversion value");
         }
         return converter(v);
@@ -967,9 +967,9 @@ class IProtocol {
         this._state = state;
         this._dataRxHandler(state, data);
         if (state === ProtocolState.FAILED) {
-            Logger.instance.log("error", data);
+            INSTANCES['logger'].log("error", data);
         } else if (state === ProtocolState.CREATED) {
-            Logger.instance.log("info", data);
+            INSTANCES['logger'].log("info", data);
         }
     }
 }
@@ -990,7 +990,7 @@ class BroadcastProtocol extends IProtocol {
      */
     constructor(config, dataRxHandler) {
         super(Protocol.BROADCAST, config, dataRxHandler);
-        Logger.instance.checkParam("string", config);
+        INSTANCES['logger'].checkParam("string", config);
         let me = this;
         this._bc = new BroadcastChannel(config);
         this._bc.onmessage = (e) => {
@@ -1019,7 +1019,7 @@ class BroadcastProtocol extends IProtocol {
         try {
             this._bc.close();
         } catch (err) {
-            Logger.instance.log("error", 
+            INSTANCES['logger'].log("error", 
                 `${this._config} failed to close the broadcast protocol`);
         }
     }
@@ -1041,7 +1041,7 @@ class SSEProtocol extends IProtocol {
      */
     constructor(config, dataRxHandler) {
         super(Protocol.SSE, config, dataRxHandler);
-        Logger.instance.checkParam("string", config);
+        INSTANCES['logger'].checkParam("string", config);
         let me = this;
         this._sse = new EventSource(config);
         this._sse.onerror = () => {
@@ -1087,7 +1087,7 @@ class WebSocketProtocol extends IProtocol {
      */
     constructor(config, dataRxHandler) {
         super(Protocol.WEB_SOCKET, config, dataRxHandler);
-        Logger.instance.checkParam("string", config);
+        INSTANCES['logger'].checkParam("string", config);
         this._s = undefined;
         this._isProtocolBeingClosed = false;
         this.createSocket();
@@ -1145,7 +1145,7 @@ class WebSocketProtocol extends IProtocol {
         try {
             this._s.close(code, reason);
         } catch (err) {
-            Logger.instance.log("error", err);
+            INSTANCES['logger'].log("error", err);
         }
     }
 
@@ -1201,7 +1201,7 @@ class Network {
      * @returns {IProtocol} object of the queried protocol or null if not found
      */
     _getProtocol(id) {
-        Logger.instance.checkParam("number", id);
+        INSTANCES['logger'].checkParam("number", id);
         let protocol = null;
         try {
             protocol = this._protocolTracker[id];
@@ -1254,7 +1254,7 @@ class Network {
      *  website for details of the methods.
      */
     fetch(url, options = undefined) {
-        Logger.instance.checkParam("string", url);
+        INSTANCES['logger'].checkParam("string", url);
         return new Promise((resolve, reject) => {
             fetch(url, options)
                 .then((resp) => {
@@ -1274,13 +1274,13 @@ class Network {
                     } else  {
                         // The data was not ok, go reject it.
                         let err = `HTTP Error Code ${resp.status}. ${resp.statusText}`
-                        Logger.instance.log("warn", err);
+                        INSTANCES['logger'].log("warn", err);
                         reject(err);
                     }
                 })
                 .catch ((err) => {
                     // Unknown error, go reject this
-                    Logger.instance.log("error", err);
+                    INSTANCES['logger'].log("error", err);
                     reject(err);
                 });
         });
@@ -1301,7 +1301,7 @@ class Network {
      * @return {boolean} true if it is supported, false if not.
      */    
     isProtocolSupported(type) {
-        Logger.instance.checkParam("string", type);
+        INSTANCES['logger'].checkParam("string", type);
         let isSupported = false;
         if (type === Protocol.BROADCAST) {
             isSupported = ("BroadcastChannel" in window);
@@ -1310,7 +1310,7 @@ class Network {
         } else if (type === Protocol.WEB_SOCKET) {
             isSupported = ("WebSocket" in window);
         } else {
-            Logger.instance.throwSyntaxError("Invalid Protocol parameter specified");
+            INSTANCES['logger'].throwSyntaxError("Invalid Protocol parameter specified");
         }
         return isSupported;
     }
@@ -1321,7 +1321,7 @@ class Network {
      * @type {function}
      */
     set onNetworkAvailable(handler) {
-        Logger.instance.checkParam("function", handler, 1);
+        INSTANCES['logger'].checkParam("function", handler, 1);
         this._networkAvailableHandler = handler;
         this._networkAvailableHandler(this.isAvailable());
     }
@@ -1339,9 +1339,9 @@ class Network {
      */    
     openProtocol(type, config, dataRxHandler) {
         // Validate our parameters
-        Logger.instance.checkParam("function", dataRxHandler, 2);
+        INSTANCES['logger'].checkParam("function", dataRxHandler, 2);
         if (!(config)) {
-            Logger.instance.throwSyntaxError("[config] was not specified");
+            INSTANCES['logger'].throwSyntaxError("[config] was not specified");
         }
 
         // Go create our protocols:
@@ -1355,7 +1355,7 @@ class Network {
             this._protocolTracker[++this._protocolId] = new WebSocketProtocol(
                 config, dataRxHandler);
         } else {
-            Logger.instance.throwSyntaxError(
+            INSTANCES['logger'].throwSyntaxError(
                 "[type] specified is not a valid Protocol.");
         }
 
@@ -1396,9 +1396,9 @@ class Network {
      *  for transfer, false otherwise.
      */
     sendBeacon(url, data) {
-        Logger.instance.checkParam("string", url);
+        INSTANCES['logger'].checkParam("string", url);
         if (!(data)) {
-            Logger.instance.throwSyntaxError("data is an expected parameter");
+            INSTANCES['logger'].throwSyntaxError("data is an expected parameter");
         }
         let success = false;
         if ("sendBeacon" in navigator) {
@@ -1446,7 +1446,7 @@ class CookieManager {
      */
     checkCookiesEnabled() {
         if (!navigator.cookieEnabled) {
-            Logger.instance.throwSyntaxError("Cookies are not enabled for this browser");
+            INSTANCES['logger'].throwSyntaxError("Cookies are not enabled for this browser");
         }
     }
 
@@ -1531,17 +1531,17 @@ class Storage {
      * @returns {Object}
      */
     _getStorageObject(type) {
-        Logger.instance.checkParam("string", type);
+        INSTANCES['logger'].checkParam("string", type);
         let rtnval = undefined;
         switch (type) {
             case StorageMethod.COOKIE:   rtnval = this._cookieManager; break;
             case StorageMethod.LOCAL:    rtnval = this._localStorage; break;
             case StorageMethod.SESSION:  rtnval = this._sessionStorage; break;
-            default: Logger.instance.throwSyntaxError("[type] is not a StorageMethod object");
+            default: INSTANCES['logger'].throwSyntaxError("[type] is not a StorageMethod object");
         }
 
         if (rtnval === undefined) {
-            Logger.instance.throwSyntaxError(
+            INSTANCES['logger'].throwSyntaxError(
                 "Internal module storage object was unavailable");
         }
 
@@ -1568,7 +1568,7 @@ class Storage {
      */
     get(type, key) {
         let storage = this._getStorageObject(type);
-        Logger.instance.checkParam("string", key);
+        INSTANCES['logger'].checkParam("string", key);
         return storage.getItem(key);
     }
 
@@ -1582,9 +1582,9 @@ class Storage {
      */
     set(type, key, value, expDays=60) {
         let storage = this._getStorageObject(type);
-        Logger.instance.checkParam("string", key);
-        Logger.instance.checkParam("string", value);
-        Logger.instance.checkParam("number", expDays);
+        INSTANCES['logger'].checkParam("string", key);
+        INSTANCES['logger'].checkParam("string", value);
+        INSTANCES['logger'].checkParam("number", expDays);
         if (type === StorageMethod.COOKIE) {
             storage.setItem(key, value, expDays);
         } else {
@@ -1600,7 +1600,7 @@ class Storage {
      */
     remove(type, key) {
         let storage = this._getStorageObject(type);
-        Logger.instance.checkParam("string", key);
+        INSTANCES['logger'].checkParam("string", key);
         storage.removeItem(key);
     }
 }
